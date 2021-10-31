@@ -1,9 +1,38 @@
+import axios from 'axios';
 import React from 'react';
+import { useForm } from "react-hook-form";
+import './NewService.css';
 
 const NewService = () => {
+
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+        console.log(data);
+        axios.post('http://localhost:5000/services', data)
+            .then(res => {
+
+                if (res.data.insertedId) {
+                    alert('added successfully');
+                    reset();
+                }
+                // console.log(res);
+            })
+    }
     return (
-        <div>
-            <h2>Add a  New Service </h2>
+        <div className="addservice">
+
+            <h2>Please add a  New Service </h2>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <input {...register("name", { required: true, maxLength: 20 })} placeholder="name" />
+                <textarea {...register("description")} placeholder="description" />
+                <input type="number" {...register("fee")} placeholder="price" />
+                <input {...register("img")} placeholder="image link" />
+                <input type="submit" />
+            </form>
+            {/* <br /><br /><br />
+            <br /><br /><br />
+            <br /><br /><br /> */}
+
         </div>
     );
 };

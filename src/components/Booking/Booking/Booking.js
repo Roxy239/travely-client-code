@@ -7,7 +7,7 @@ const Booking = () => {
     const [service, setService] = useState({})
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('../services.json')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
@@ -15,7 +15,7 @@ const Booking = () => {
     useEffect(() => {
         if (services.length > 0) {
             console.log(services, serviceId)
-            const data = services.find((obj) => obj.id === Number(serviceId))
+            const data = services.find((obj) => obj.key === Number(serviceId))
             console.log(data);
             setService(data)
         }
