@@ -16,10 +16,10 @@ const Header = () => {
                         <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
                         <Nav.Link as={HashLink} to="/home#services"> Packages</Nav.Link>
                         <Nav.Link as={HashLink} to="/home#experts">Destinations</Nav.Link>
-
-                        <Nav.Link as={Link} to="/mylist">TourList</Nav.Link>
-                        <Nav.Link as={Link} to="/admin">Admin</Nav.Link>
-                        <Nav.Link as={Link} to="/newservice">NewPackage</Nav.Link>
+                        {user?.email && <>
+                            <Nav.Link as={Link} to="/mylist">TourList</Nav.Link>
+                            <Nav.Link as={Link} to="/admin">Admin</Nav.Link>
+                            <Nav.Link as={Link} to="/newservice">NewPackage</Nav.Link> </>}
                         {user?.email ?
                             <Button onClick={logOut} variant="secondary">Logout</Button> :
                             <Nav.Link as={Link} to="/login">Login</Nav.Link>
