@@ -23,9 +23,12 @@ const Booking = () => {
     return (
         <div>
             <h2>this is booking: {service?.id}</h2>
-            <img style={{ width: "120px", height: "120px" }} src={service?.img} alt="" />
-            <p> Fee:{service?.fee}</p>
-            <p>Description:{service?.description}</p>
+            <p className="font-weight-bold">Description:{service?.description}</p>
+            {/* <img style={{ width: "120px", height: "120px" }} src={service?.img} alt="" /> */}
+            {/* <p> Fee:{service?.fee}</p> */}
+
+            <br /> <br /> <br />
+            <br /> <br /> <br />
 
             <br /> <br /> <br />
         </div>

@@ -45,7 +45,7 @@ const exoticplaces = [
 const Exotics = () => {
     return (
         <div id='experts' className="container">
-            <h2 className="text-primary mt-5">Exotic Travelling Places </h2>
+            <h2 className="text-primary mt-5">GO Exotic  Places </h2>
             <div className="row">
                 {
                     exoticplaces.map(exoticplace => <Exotic
