@@ -14,7 +14,7 @@ const Booking = () => {
 
     const onSubmit = data => {
         data = { ...data, package: service.name }
-        axios.post('http://localhost:5000/booking', data)
+        axios.post('https://travely222.herokuapp.com/booking', data)
             .then(res => {
 
                 if (res.data) {
@@ -26,7 +26,7 @@ const Booking = () => {
     const [service, setService] = useState({})
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://travely222.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])

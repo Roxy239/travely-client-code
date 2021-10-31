@@ -8,14 +8,14 @@ const MyTravellist = () => {
     const [booking, setBooking] = useState([])
     const [loading, setLoadiong] = useState(false)
     useEffect(() => {
-        fetch('http://localhost:5000/my_booking?email=' + user.email)
+        fetch('https://travely222.herokuapp.com/my_booking?email=' + user.email)
             .then(res => res.json())
             .then(data => setBooking(data));
     }, [loading])
     const cancelBooking = (obj) => {
         const flag = window.confirm("Are you sure?");
         if (flag) {
-            axios.get('http://localhost:5000/cancel_booking/' + obj._id).then((res) => {
+            axios.get('https://travely222.herokuapp.com/cancel_booking/' + obj._id).then((res) => {
                 setLoadiong(!loading)
             })
         }
