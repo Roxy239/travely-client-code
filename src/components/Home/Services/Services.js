@@ -42,7 +42,7 @@ const Services = () => {
             <div className="service-container">
                 {
                     services.map(service => <Service
-                        key={service.id}
+                        key={service.key}
                         service={service}
                     ></Service>)
                 }

@@ -4,14 +4,14 @@ import './Service.css';
 
 const Service = ({ service }) => {
 
-    const { id, name, fee, description, img } = service;
+    const { key, name, fee, description, img } = service;
     return (
         <div className="service pb-3">
             <img src={img} alt="" />
             <h3>{name}</h3>
             <h6>Price:${fee}/per person</h6>
             <p className="px-3">{description}</p>
-            <Link to={`/booking/${id}`}>
+            <Link to={`/booking/${key}`}>
                 <button className=" btn btn-dark">Book now</button>
             </Link>
         </div>
